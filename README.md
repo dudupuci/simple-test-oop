@@ -11,7 +11,10 @@ Prova de Java - Sistema de Cadastro de Animais
 - makeSound(): um método abstrato que deve ser implementado nas classes filhas para simular o som emitido pelo animal.
 
 2) Crie cinco classes em Java que herdam da classe Animal: 
-- Dog, Cat, Bird, Shark, Lizard. 
+- Dog, Cat, Bird, Shark, Lizard.
+- Na classe Dog, adicione uma Estrutura de Dados para armazenar os brinquedos de um cachorro (não pode conter brinquedos repetidos)
+- Na classe Cat, adicione um atributo booleano para saber se o gato é vacinado ou não
+- Na classe Shark, adicione uma Estrutura de Dados para armazenar os animais que o tubarao comeu (pode conter repetidos)
 - Cada uma dessas classes deve implementar os métodos eat() e makeSound() de acordo com as características do animal.
 
 3) Crie uma interface em Java chamada DomesticAnimal que tenha um método play() que simula a ação de brincar com o animal.
