@@ -7,10 +7,17 @@ public final class Cat extends Animal implements DomesticAnimal {
 
     // Heranca para Diferenca
     private final String ownersName;
+    private Boolean isVaccinated;
 
     public Cat(final String name, Double weight, String ownersName) {
         super(name, weight);
         this.ownersName = ownersName;
+    }
+
+    public Cat(final String name, Double weight, String ownersName, Boolean isVaccinated) {
+        super(name, weight);
+        this.ownersName = ownersName;
+        this.isVaccinated = isVaccinated;
     }
 
     public String getOwnersName() {
@@ -27,10 +34,13 @@ public final class Cat extends Animal implements DomesticAnimal {
         return weight;
     }
 
+    public Boolean getVaccinated() {
+        return isVaccinated;
+    }
+
     @Override
     protected void eat() {
         System.out.println("Cat.eat");
-
     }
 
     @Override
@@ -45,9 +55,10 @@ public final class Cat extends Animal implements DomesticAnimal {
 
     @Override
     public String toString() {
-        return "Cat{" +
+        return "Cat {" +
                 "ownersName='" + ownersName + '\'' +
                 ", name='" + name + '\'' +
-                ", weight=" + weight;
+                ", weight=" + weight +
+                ", isVaccinated= " + isVaccinated;
     }
 }

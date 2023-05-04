@@ -46,10 +46,9 @@ public final class Bird extends Animal implements DomesticAnimal {
 
     @Override
     public String toString() {
-        return "Bird{" +
+        return "Bird {" +
                 "beakColor=" + beakColor +
                 ", name='" + name + '\'' +
-                ", weight=" + weight +
-                "} " + super.toString();
+                ", weight=" + weight + "}";
     }
 }

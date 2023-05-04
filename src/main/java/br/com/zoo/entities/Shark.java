@@ -2,12 +2,20 @@ package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public final class Shark extends Animal {
 
-    // Heranca para Implementacao
+    public Map<String, Integer> animalsEaten = new HashMap<>();
 
     public Shark(String name, Double weight) {
         super(name, weight);
+    }
+
+    public Shark(String name, Double weight, Map<String, Integer> animalsEaten) {
+        super(name, weight);
+        this.animalsEaten = animalsEaten;
     }
 
     @Override
@@ -18,6 +26,14 @@ public final class Shark extends Animal {
     @Override
     public Double getWeight() {
         return weight;
+    }
+
+    public Map<String, Integer> getAnimalsEaten() {
+        return animalsEaten;
+    }
+
+    public void setAnimalsEaten(Map<String, Integer> animalsEaten) {
+        this.animalsEaten = animalsEaten;
     }
 
     @Override
@@ -32,5 +48,13 @@ public final class Shark extends Animal {
 
     public void toHunt() {
         System.out.println("Shark.toHunt");
+    }
+
+    @Override
+    public String toString() {
+        return "Shark {" +
+                "name='" + name + '\'' +
+                " weight=" + weight +
+                " animalsEaten=" + animalsEaten + "}";
     }
 }

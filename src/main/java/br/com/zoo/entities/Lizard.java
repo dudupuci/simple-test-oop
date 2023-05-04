@@ -32,9 +32,8 @@ public final class Lizard extends Animal {
 
     @Override
     public String toString() {
-        return "Lizard{" +
+        return "Lizard {" +
                 "name='" + name + '\'' +
-                ", weight=" + weight +
-                "} " + super.toString();
+                ", weight=" + weight + "}";
     }
 }
