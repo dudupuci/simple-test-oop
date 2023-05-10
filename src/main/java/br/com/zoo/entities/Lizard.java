@@ -6,8 +6,13 @@ public final class Lizard extends Animal {
 
     // Heranca para Implementacao
 
-    public Lizard(String name, Double weight) {
-        super(name, weight);
+    public Lizard(String id, String name, Double weight) {
+        super(id, name, weight);
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     @Override

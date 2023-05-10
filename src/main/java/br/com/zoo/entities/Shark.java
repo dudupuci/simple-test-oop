@@ -9,13 +9,18 @@ public final class Shark extends Animal {
 
     public Map<String, Integer> animalsEaten = new HashMap<>();
 
-    public Shark(String name, Double weight) {
-        super(name, weight);
+    public Shark(String id, String name, Double weight) {
+        super(id, name, weight);
     }
 
-    public Shark(String name, Double weight, Map<String, Integer> animalsEaten) {
-        super(name, weight);
+    public Shark(String id, String name, Double weight, Map<String, Integer> animalsEaten) {
+        super(id, name, weight);
         this.animalsEaten = animalsEaten;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     @Override

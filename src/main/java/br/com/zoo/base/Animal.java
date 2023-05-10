@@ -1,13 +1,19 @@
 package br.com.zoo.base;
 
 public abstract class Animal {
+
+    protected String id;
     protected String name;
     protected Double weight;
 
-    public Animal(String name, Double weight) {
+    public Animal(String id, String name, Double weight) {
+        this.id = id;
         this.name = name;
         this.weight = weight;
     }
+
+
+    public abstract String getId();
 
     public abstract String getName();
 

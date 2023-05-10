@@ -6,17 +6,22 @@ import br.com.zoo.interfaces.DomesticAnimal;
 
 public final class Bird extends Animal implements DomesticAnimal {
 
-    // Heranca para Diferenca
+    // Inheritance for difference.
 
     private final BeakColor beakColor;
 
-    public Bird(String name, Double weight, BeakColor beakColor) {
-        super(name, weight);
+    public Bird(String id, String name, Double weight, BeakColor beakColor) {
+        super(id, name, weight);
         this.beakColor = beakColor;
     }
 
     public BeakColor getBeakColor() {
         return beakColor;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     @Override

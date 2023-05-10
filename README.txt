@@ -36,15 +36,5 @@ Lembrando que estes métodos deverão:
 
     <h3> PRIMEIRA PARTE DO DESAFIO - FIM </h3>
 
-7) Crie uma classe em Java chamada Casa que tenha um conjunto de ANIMAIS DOMÉSTICOS(apenas), representado por uma instância da classe Set.
+    <h3> SEGUNDA PARTE DO DESAFIO - INICIO </h3>
 
-8) Crie um método na classe Casa chamado addDomesticAnimal(AnimalDomestico animal) que adiciona um animal doméstico ao conjunto.
-
-9) Crie um método na classe Casa chamado removerAnimalDomestico(AnimalDomestico animal) que remove um animal doméstico do conjunto.
-
-10) Crie um método na classe Casa chamado listarAnimaisDomesticos() que retorna uma lista de todos os animais domésticos da casa.
-
-11) Crie uma classe em Java chamada Main que contenha um método main. Nesse método, crie uma instância do zoologico e adicione alguns animais. 
-Crie também uma instância da casa e adicione alguns animais domésticos.
-
-12) Imprima na tela as informações dos animais cadastrados, utilizando os métodos da classe Animal, e também as informações dos animais domésticos, utilizando o método brincar() da interface DomesticAnimal.

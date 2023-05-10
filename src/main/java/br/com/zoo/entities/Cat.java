@@ -5,23 +5,28 @@ import br.com.zoo.interfaces.DomesticAnimal;
 
 public final class Cat extends Animal implements DomesticAnimal {
 
-    // Heranca para Diferenca
+    // Inheritance for difference.
     private final String ownersName;
     private Boolean isVaccinated;
 
-    public Cat(final String name, Double weight, String ownersName) {
-        super(name, weight);
+    public Cat(String id, final String name, Double weight, String ownersName) {
+        super(id, name, weight);
         this.ownersName = ownersName;
     }
 
-    public Cat(final String name, Double weight, String ownersName, Boolean isVaccinated) {
-        super(name, weight);
+    public Cat(String id, final String name, Double weight, String ownersName, Boolean isVaccinated) {
+        super(id, name, weight);
         this.ownersName = ownersName;
         this.isVaccinated = isVaccinated;
     }
 
     public String getOwnersName() {
         return ownersName;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     @Override

@@ -8,23 +8,28 @@ import java.util.Set;
 
 public final class Dog extends Animal implements DomesticAnimal {
 
-    // Heranca para Diferenca
+    // Inheritance for difference.
     private final String dogBread;
     private Set<String> toys = new HashSet<>();
 
-    public Dog(final String dogBread, final String name, Double weight) {
-        super(name, weight);
+    public Dog(String id, final String dogBread, final String name, Double weight) {
+        super(id, name, weight);
         this.dogBread = dogBread;
     }
 
-    public Dog(final String dogBread, final String name, Double weight, Set<String> toys) {
-        super(name, weight);
+    public Dog(String id, final String dogBread, final String name, Double weight, Set<String> toys) {
+        super(id, name, weight);
         this.dogBread = dogBread;
         this.toys = toys;
     }
 
     public String getDogBread() {
         return dogBread;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 
     @Override
