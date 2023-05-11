@@ -9,7 +9,7 @@ public interface AnimalService {
 
     Optional<Animal> findById(String id);
 
-    void update(Animal animal);
+    void update(String id, Animal animal);
 
     void deleteById(String id);
 }

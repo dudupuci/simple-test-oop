@@ -3,14 +3,21 @@ package br.com.zoo.entities;
 import br.com.zoo.base.Animal;
 import br.com.zoo.interfaces.DomesticAnimal;
 
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public final class Dog extends Animal implements DomesticAnimal {
 
     // Inheritance for difference.
-    private final String dogBread;
+    private String dogBread;
+    @Transient
     private Set<String> toys = new HashSet<>();
+
+    public Dog() {
+    }
 
     public Dog(String id, final String dogBread, final String name, Double weight) {
         super(id, name, weight);
@@ -32,15 +39,6 @@ public final class Dog extends Animal implements DomesticAnimal {
         return id;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Double getWeight() {
-        return weight;
-    }
 
     public Set<String> getToys() {
         return toys;
@@ -67,7 +65,8 @@ public final class Dog extends Animal implements DomesticAnimal {
     @Override
     public String toString() {
         return "Dog {" +
-                "dogBread='" + dogBread + '\'' +
+                ", id=" + id +
+                ", dogBread='" + dogBread + '\'' +
                 ", name='" + name + '\'' +
                 ", weight=" + weight +
                 ", toys= " + toys;

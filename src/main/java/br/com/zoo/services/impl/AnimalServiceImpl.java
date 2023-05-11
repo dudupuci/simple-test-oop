@@ -3,10 +3,12 @@ package br.com.zoo.services.impl;
 import br.com.zoo.base.Animal;
 import br.com.zoo.repositories.AnimalRepository;
 import br.com.zoo.services.AnimalService;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 import java.util.Optional;
 
+@Service
 public class AnimalServiceImpl implements AnimalService {
     private AnimalRepository repository;
 
@@ -26,12 +28,20 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public void update(Animal animal) {
+    public void update(String id, Animal animal) {
+        var oldAnimal = repository.findById(id).get();
+        updateDataAnimal(oldAnimal, animal);
         this.repository.save(animal);
     }
 
     @Override
     public void deleteById(String id) {
         this.repository.deleteById(id);
+    }
+
+    public void updateDataAnimal(Animal oldAnimal, Animal newAnimal) {
+        oldAnimal.setId(newAnimal.getId());
+        oldAnimal.setName(newAnimal.getName());
+        oldAnimal.setWeight(newAnimal.getWeight());
     }
 }

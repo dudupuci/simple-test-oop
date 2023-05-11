@@ -2,12 +2,18 @@ package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
 
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 import java.util.HashMap;
 import java.util.Map;
 
+@Entity
 public final class Shark extends Animal {
-
+    @Transient
     public Map<String, Integer> animalsEaten = new HashMap<>();
+
+    public Shark() {
+    }
 
     public Shark(String id, String name, Double weight) {
         super(id, name, weight);
@@ -58,6 +64,7 @@ public final class Shark extends Animal {
     @Override
     public String toString() {
         return "Shark {" +
+                "id= " + id +
                 "name='" + name + '\'' +
                 " weight=" + weight +
                 " animalsEaten=" + animalsEaten + "}";

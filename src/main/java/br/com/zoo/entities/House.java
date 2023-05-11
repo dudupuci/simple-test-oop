@@ -5,6 +5,7 @@ import br.com.zoo.interfaces.DomesticAnimal;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public final class House {
 
     private Set<DomesticAnimal> domesticAnimalSet = new HashSet<>();

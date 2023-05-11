@@ -2,9 +2,15 @@ package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
 
+import javax.persistence.Entity;
+
+@Entity
 public final class Lizard extends Animal {
 
     // Heranca para Implementacao
+
+    public Lizard() {
+    }
 
     public Lizard(String id, String name, Double weight) {
         super(id, name, weight);
@@ -15,15 +21,6 @@ public final class Lizard extends Animal {
         return id;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Double getWeight() {
-        return weight;
-    }
 
     @Override
     protected void eat() {
@@ -38,6 +35,7 @@ public final class Lizard extends Animal {
     @Override
     public String toString() {
         return "Lizard {" +
+                "id= " + id +
                 "name='" + name + '\'' +
                 ", weight=" + weight + "}";
     }

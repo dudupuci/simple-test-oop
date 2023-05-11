@@ -3,11 +3,17 @@ package br.com.zoo.entities;
 import br.com.zoo.base.Animal;
 import br.com.zoo.interfaces.DomesticAnimal;
 
+import javax.persistence.Entity;
+
+@Entity
 public final class Cat extends Animal implements DomesticAnimal {
 
     // Inheritance for difference.
-    private final String ownersName;
+    private String ownersName;
     private Boolean isVaccinated;
+
+    public Cat() {
+    }
 
     public Cat(String id, final String name, Double weight, String ownersName) {
         super(id, name, weight);
@@ -29,15 +35,6 @@ public final class Cat extends Animal implements DomesticAnimal {
         return id;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Double getWeight() {
-        return weight;
-    }
 
     public Boolean getVaccinated() {
         return isVaccinated;
@@ -61,6 +58,7 @@ public final class Cat extends Animal implements DomesticAnimal {
     @Override
     public String toString() {
         return "Cat {" +
+                "id= " + id +
                 "ownersName='" + ownersName + '\'' +
                 ", name='" + name + '\'' +
                 ", weight=" + weight +
