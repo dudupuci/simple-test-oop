@@ -4,6 +4,7 @@ import br.com.zoo.base.Animal;
 import br.com.zoo.interfaces.DomesticAnimal;
 
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Entity
 public final class Cat extends Animal implements DomesticAnimal {
@@ -15,12 +16,12 @@ public final class Cat extends Animal implements DomesticAnimal {
     public Cat() {
     }
 
-    public Cat(String id, final String name, Double weight, String ownersName) {
+    public Cat(UUID id, final String name, Double weight, String ownersName) {
         super(id, name, weight);
         this.ownersName = ownersName;
     }
 
-    public Cat(String id, final String name, Double weight, String ownersName, Boolean isVaccinated) {
+    public Cat(UUID id, final String name, Double weight, String ownersName, Boolean isVaccinated) {
         super(id, name, weight);
         this.ownersName = ownersName;
         this.isVaccinated = isVaccinated;
@@ -30,11 +31,13 @@ public final class Cat extends Animal implements DomesticAnimal {
         return ownersName;
     }
 
-    @Override
-    public String getId() {
-        return id;
+    public void setOwnersName(String ownersName) {
+        this.ownersName = ownersName;
     }
 
+    public void setVaccinated(Boolean vaccinated) {
+        isVaccinated = vaccinated;
+    }
 
     public Boolean getVaccinated() {
         return isVaccinated;

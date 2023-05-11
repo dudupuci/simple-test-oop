@@ -3,6 +3,7 @@ package br.com.zoo.entities;
 import br.com.zoo.base.Animal;
 
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Entity
 public final class Lizard extends Animal {
@@ -12,13 +13,8 @@ public final class Lizard extends Animal {
     public Lizard() {
     }
 
-    public Lizard(String id, String name, Double weight) {
+    public Lizard(UUID id, String name, Double weight) {
         super(id, name, weight);
-    }
-
-    @Override
-    public String getId() {
-        return id;
     }
 
 

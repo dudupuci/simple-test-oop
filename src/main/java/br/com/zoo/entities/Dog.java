@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 public final class Dog extends Animal implements DomesticAnimal {
@@ -19,12 +20,12 @@ public final class Dog extends Animal implements DomesticAnimal {
     public Dog() {
     }
 
-    public Dog(String id, final String dogBread, final String name, Double weight) {
+    public Dog(UUID id, final String dogBread, final String name, Double weight) {
         super(id, name, weight);
         this.dogBread = dogBread;
     }
 
-    public Dog(String id, final String dogBread, final String name, Double weight, Set<String> toys) {
+    public Dog(UUID id, final String dogBread, final String name, Double weight, Set<String> toys) {
         super(id, name, weight);
         this.dogBread = dogBread;
         this.toys = toys;
@@ -32,11 +33,6 @@ public final class Dog extends Animal implements DomesticAnimal {
 
     public String getDogBread() {
         return dogBread;
-    }
-
-    @Override
-    public String getId() {
-        return id;
     }
 
 

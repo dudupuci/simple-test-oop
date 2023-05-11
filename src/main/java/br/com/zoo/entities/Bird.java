@@ -7,6 +7,7 @@ import br.com.zoo.interfaces.DomesticAnimal;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Entity
 public final class Bird extends Animal implements DomesticAnimal {
@@ -19,18 +20,13 @@ public final class Bird extends Animal implements DomesticAnimal {
     public Bird() {
     }
 
-    public Bird(String id, String name, Double weight, String beakColor) {
+    public Bird(UUID id, String name, Double weight, String beakColor) {
         super(id, name, weight);
         this.beakColor = beakColor;
     }
 
     public String getBeakColor() {
         return beakColor;
-    }
-
-    @Override
-    public String getId() {
-        return id;
     }
 
     @Override

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @Entity
 public final class Shark extends Animal {
@@ -15,28 +16,13 @@ public final class Shark extends Animal {
     public Shark() {
     }
 
-    public Shark(String id, String name, Double weight) {
+    public Shark(UUID id, String name, Double weight) {
         super(id, name, weight);
     }
 
-    public Shark(String id, String name, Double weight, Map<String, Integer> animalsEaten) {
+    public Shark(UUID id, String name, Double weight, Map<String, Integer> animalsEaten) {
         super(id, name, weight);
         this.animalsEaten = animalsEaten;
-    }
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Double getWeight() {
-        return weight;
     }
 
     public Map<String, Integer> getAnimalsEaten() {

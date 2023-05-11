@@ -20,17 +20,17 @@ public class Zoological {
         List<? super Animal> animalsList = new ArrayList<>();
         Set<DomesticAnimal> domesticAnimalSet = new HashSet<>();
         Map<String, Integer> animalsEaten = new HashMap<>();
-        Dog dog = new Dog("ID","Golden Retriever", "Bolota", 250D, Set.of("Bolinha", "Corda"));
-        Shark shark = new Shark("ID","Sword Shark", 1400D, animalsEaten);
-        Bird bird = new Bird("ID","Beija-flor", 140D, BeakColor.GREEN.toString());
-        Lizard lizard = new Lizard("ID","Iguana", 240D);
+        Dog dog = new Dog(UUID.randomUUID(),"Golden Retriever", "Bolota", 250D, Set.of("Bolinha", "Corda"));
+        Shark shark = new Shark(UUID.randomUUID(),"Sword Shark", 1400D, animalsEaten);
+        Bird bird = new Bird(UUID.randomUUID(),"Beija-flor", 140D, BeakColor.GREEN.toString());
+        Lizard lizard = new Lizard(UUID.randomUUID(),"Iguana", 240D);
 
         animalsEaten.put("Peixe-palhaco", 3);
         animalsEaten.put("Anchova", 6);
         animalsEaten.put("Sardinha", 2);
 
         zoological.addAnimal(dog, animalsList);
-        zoological.addAnimal(new Cat("ID","Cat", 253D, "Eduardo", true), animalsList);
+        zoological.addAnimal(new Cat(UUID.randomUUID(),"Cat", 253D, "Eduardo", true), animalsList);
         zoological.addAnimal(shark, animalsList);
         zoological.addAnimal(bird, animalsList);
         zoological.addAnimal(lizard, animalsList);
