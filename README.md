@@ -195,7 +195,7 @@ neste primeiro momento. Quem fará isto é o framework de ORM Hibernate.</p>
 <li class="has-line-data" data-line-start="166" data-line-end="168">Artigo retirado da internet</li>
 </ul>
 <p class="has-line-data" data-line-start="168" data-line-end="172">O ORM é uma técnica que permite mapear objetos de uma aplicação para tabelas de um banco de dados relacional, eliminando a necessidade de escrever código SQL manualmente.<br>
-O &lt;strong&gt;Hibernate&lt;/strong&gt; é um dos frameworks de ORM mais populares para Java e é amplamente utilizado em aplicações empresariais.<br>
+O &lt;&gt;Hibernate&lt;/&gt; é um dos frameworks de ORM mais populares para Java e é amplamente utilizado em aplicações empresariais.<br>
 Ele fornece uma interface simples para realizar operações de CRUD (criação, leitura, atualização e exclusão) em um banco de dados,<br>
 além de suportar recursos avançados, como transações, cache de segundo nível, lazy loading, herança de classes e muito mais.</p>
 <ol start="15">
@@ -213,50 +213,38 @@ além de suportar recursos avançados, como transações, cache de segundo níve
 <li class="has-line-data" data-line-start="178" data-line-end="179">Crie um package services</li>
 </ol>
 <ul>
-<li class="has-line-data" data-line-start="179" data-line-end="181">Crie seu AnimalService, onde você deve criar (apenas criar) os métodos de persistência de dados, como:</li>
-</ul>
-<ol start="18">
-<li class="has-line-data" data-line-start="181" data-line-end="182">Dentro do package services, crie outro package servicesimpl</li>
-</ol>
-<ul>
-<li class="has-line-data" data-line-start="182" data-line-end="184">Crie uma classe AnimalServiceImpl que implementa todos os métodos de AnimalService, e implemente a lógica.</li>
+<li class="has-line-data" data-line-start="179" data-line-end="180">Crie seu AnimalService, onde você deve criar (apenas criar) os métodos de persistência de dados, como:</li>
 </ul>
 <ol>
-<li class="has-line-data" data-line-start="184" data-line-end="185">
-<p class="has-line-data" data-line-start="184" data-line-end="185">criar um animal</p>
-</li>
-<li class="has-line-data" data-line-start="185" data-line-end="186">
-<p class="has-line-data" data-line-start="185" data-line-end="186">deletar um animal por id</p>
-</li>
-<li class="has-line-data" data-line-start="186" data-line-end="187">
-<p class="has-line-data" data-line-start="186" data-line-end="187">atualizar um animal</p>
-</li>
-<li class="has-line-data" data-line-start="187" data-line-end="188">
-<p class="has-line-data" data-line-start="187" data-line-end="188">encontrar por id</p>
-</li>
-<li class="has-line-data" data-line-start="188" data-line-end="190">
-<p class="has-line-data" data-line-start="188" data-line-end="189">listar todos animais</p>
-</li>
-<li class="has-line-data" data-line-start="190" data-line-end="191">
-<p class="has-line-data" data-line-start="190" data-line-end="191">Implemente a lógica dos métodos, pesquise, estude.</p>
-</li>
-<li class="has-line-data" data-line-start="191" data-line-end="192">
-<p class="has-line-data" data-line-start="191" data-line-end="192">Feito isto, podemos iniciar os testes e as transações de persistência.</p>
-</li>
+<li class="has-line-data" data-line-start="180" data-line-end="181">criar um animal</li>
+<li class="has-line-data" data-line-start="181" data-line-end="182">deletar um animal por id</li>
+<li class="has-line-data" data-line-start="182" data-line-end="183">atualizar um animal</li>
+<li class="has-line-data" data-line-start="183" data-line-end="184">encontrar por id</li>
+<li class="has-line-data" data-line-start="184" data-line-end="185">listar todos animais</li>
 </ol>
-<ol start="21">
-<li class="has-line-data" data-line-start="194" data-line-end="195">Na sua classe Main (principal), implemente a interface CommandLineRunner (pacote org.springframework.boot.CommandLineRunner);</li>
+<ol start="18">
+<li class="has-line-data" data-line-start="187" data-line-end="188">Dentro do package services, crie outro package servicesimpl</li>
 </ol>
 <ul>
-<li class="has-line-data" data-line-start="195" data-line-end="198">No método gerado (public void run(String… args) throw Exception),<br>
+<li class="has-line-data" data-line-start="188" data-line-end="189">Crie uma classe AnimalServiceImpl que implementa todos os métodos de AnimalService, e implemente a lógica.</li>
+</ul>
+<ol start="19">
+<li class="has-line-data" data-line-start="191" data-line-end="192">Implemente a lógica dos métodos, pesquise, estude.</li>
+<li class="has-line-data" data-line-start="192" data-line-end="193">Feito isto, podemos iniciar os testes e as transações de persistência.</li>
+</ol>
+<ol start="21">
+<li class="has-line-data" data-line-start="195" data-line-end="196">Na sua classe Main (principal), implemente a interface CommandLineRunner (pacote org.springframework.boot.CommandLineRunner);</li>
+</ol>
+<ul>
+<li class="has-line-data" data-line-start="196" data-line-end="199">No método gerado (public void run(String… args) throw Exception),<br>
 tudo o que for adicionado, deverá ser processado após a aplicação iniciar, sempre que você rodar a aplicacao.</li>
 </ul>
 <ol start="22">
-<li class="has-line-data" data-line-start="198" data-line-end="200">
-<p class="has-line-data" data-line-start="198" data-line-end="199">Faça um @Autowired AnimalServiceImpl animalServiceImpl logo após o inicio da classe Main (pesquise o porque disto)</p>
+<li class="has-line-data" data-line-start="199" data-line-end="201">
+<p class="has-line-data" data-line-start="199" data-line-end="200">Faça um @Autowired AnimalServiceImpl animalServiceImpl logo após o inicio da classe Main (pesquise o porque disto)</p>
 </li>
-<li class="has-line-data" data-line-start="200" data-line-end="224">
-<p class="has-line-data" data-line-start="200" data-line-end="201">Copie e cole as seguintes criacoes de animais no método run</p>
+<li class="has-line-data" data-line-start="201" data-line-end="225">
+<p class="has-line-data" data-line-start="201" data-line-end="202">Copie e cole as seguintes criacoes de animais no método run</p>
 <pre><code>this.animalService.create(new Cat(UUID.fromString(&quot;2b80c9b8-74de-4eb5-a78d-ead18ecf6f52&quot;), &quot;Carlos&quot;, 2500D, &quot;Eduardo&quot;, true));
 this.animalService.create(new Bird(UUID.fromString(&quot;27a3996f-cabd-4fb3-823e-f7d542c994b7&quot;), &quot;Zezé&quot;, 500D, BeakColor.BLUE.toString()));
 this.animalService.create(new Dog(UUID.fromString(&quot;960bb760-acb9-4ae7-8aac-cdf19188234e&quot;), &quot;Border Collie&quot;, &quot;Enzo&quot;, 28000D));
@@ -280,24 +268,24 @@ this.animalService.create(new Dog(UUID.fromString(&quot;354cbb03-8c16-43a2-9de9-
 this.animalService.create(new Lizard(UUID.fromString(&quot;ceea70d3-ea1d-42f8-a5c9-bc4df5f12a62&quot;), &quot;Lila&quot;, 120D));
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="224" data-line-end="227">
-<p class="has-line-data" data-line-start="224" data-line-end="226">Acesse o H2 via localhost:8095/h2, faca seu login conforme foi definido<br>
+<li class="has-line-data" data-line-start="225" data-line-end="228">
+<p class="has-line-data" data-line-start="225" data-line-end="227">Acesse o H2 via localhost:8095/h2, faca seu login conforme foi definido<br>
 no arquivo application-test.properties</p>
 </li>
-<li class="has-line-data" data-line-start="227" data-line-end="229">
-<p class="has-line-data" data-line-start="227" data-line-end="228">Brinque com as persistências! :)</p>
+<li class="has-line-data" data-line-start="228" data-line-end="230">
+<p class="has-line-data" data-line-start="228" data-line-end="229">Brinque com as persistências! :)</p>
 </li>
-<li class="has-line-data" data-line-start="229" data-line-end="230">
-<p class="has-line-data" data-line-start="229" data-line-end="230">Crie novos animais, delete, tente encontrar por ID…</p>
+<li class="has-line-data" data-line-start="230" data-line-end="231">
+<p class="has-line-data" data-line-start="230" data-line-end="231">Crie novos animais, delete, tente encontrar por ID…</p>
 </li>
-<li class="has-line-data" data-line-start="230" data-line-end="233">
-<p class="has-line-data" data-line-start="230" data-line-end="232">Você pode chamar os métodos do service todos dentro do método run, na classe Principal do projeto<br>
+<li class="has-line-data" data-line-start="231" data-line-end="234">
+<p class="has-line-data" data-line-start="231" data-line-end="233">Você pode chamar os métodos do service todos dentro do método run, na classe Principal do projeto<br>
 e ir brincando, deletar animais, criar, tentar atualizar e ver tudo isto acontencendo no banco H2.</p>
 </li>
-<li class="has-line-data" data-line-start="233" data-line-end="235">
-<p class="has-line-data" data-line-start="233" data-line-end="234">Voce pode tentar atualizar o banco para o postgres, caso queira se aventurar nos estudos.</p>
+<li class="has-line-data" data-line-start="234" data-line-end="236">
+<p class="has-line-data" data-line-start="234" data-line-end="235">Voce pode tentar atualizar o banco para o postgres, caso queira se aventurar nos estudos.</p>
 </li>
-<li class="has-line-data" data-line-start="235" data-line-end="236">
-<p class="has-line-data" data-line-start="235" data-line-end="236">Após feito isto, aguarde novas instruções. Bons estudos.</p>
+<li class="has-line-data" data-line-start="236" data-line-end="237">
+<p class="has-line-data" data-line-start="236" data-line-end="237">Após feito isto, aguarde novas instruções. Bons estudos.</p>
 </li>
 </ol>
