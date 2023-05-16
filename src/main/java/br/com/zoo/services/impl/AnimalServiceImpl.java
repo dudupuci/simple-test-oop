@@ -3,6 +3,7 @@ package br.com.zoo.services.impl;
 import br.com.zoo.base.Animal;
 import br.com.zoo.repositories.AnimalRepository;
 import br.com.zoo.services.AnimalService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

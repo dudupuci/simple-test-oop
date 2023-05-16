@@ -1,6 +1,7 @@
 package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
+import br.com.zoo.entities.dto.DogDto;
 import br.com.zoo.interfaces.DomesticAnimal;
 
 import javax.persistence.DiscriminatorValue;
@@ -18,6 +19,10 @@ public final class Dog extends Animal implements DomesticAnimal {
     private String dogBread;
     @Transient
     private Set<String> toys = new HashSet<>();
+
+    public DogDto toDto() {
+        return new DogDto(id, name, weight, dogBread, toys);
+    }
 
     public Dog() {
     }
