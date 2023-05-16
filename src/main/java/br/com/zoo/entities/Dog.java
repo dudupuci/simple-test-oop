@@ -3,6 +3,7 @@ package br.com.zoo.entities;
 import br.com.zoo.base.Animal;
 import br.com.zoo.interfaces.DomesticAnimal;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.HashSet;
@@ -10,6 +11,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
+@DiscriminatorValue("Dog")
 public final class Dog extends Animal implements DomesticAnimal {
 
     // Inheritance for difference.

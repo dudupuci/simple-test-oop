@@ -4,12 +4,14 @@ import br.com.zoo.base.Animal;
 import br.com.zoo.enums.BeakColor;
 import br.com.zoo.interfaces.DomesticAnimal;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import java.util.UUID;
 
 @Entity
+@DiscriminatorValue("Bird")
 public final class Bird extends Animal implements DomesticAnimal {
 
     // Inheritance for difference.

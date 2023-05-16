@@ -2,6 +2,7 @@ package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Entity
+@DiscriminatorValue("Shark")
 public final class Shark extends Animal {
     @Transient
     public Map<String, Integer> animalsEaten = new HashMap<>();

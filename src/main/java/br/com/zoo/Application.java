@@ -39,8 +39,6 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Cat cat = new Cat();
-        cat.setId(UUID.randomUUID());
         this.animalService.create(new Cat(UUID.fromString("2b80c9b8-74de-4eb5-a78d-ead18ecf6f52"), "Carlos", 2500D, "Eduardo", true));
         this.animalService.create(new Bird(UUID.fromString("27a3996f-cabd-4fb3-823e-f7d542c994b7"), "Zezé", 500D, BeakColor.BLUE.toString()));
         this.animalService.create(new Dog(UUID.fromString("960bb760-acb9-4ae7-8aac-cdf19188234e"), "Border Collie", "Enzo", 28000D));
@@ -62,7 +60,7 @@ public class Application implements CommandLineRunner {
         this.animalService.create(new Bird(UUID.fromString("ea3c5c26-9c51-4f20-b73a-60158ad8e0a7"), "Canario", 400D, BeakColor.GREEN.toString()));
         this.animalService.create(new Dog(UUID.fromString("354cbb03-8c16-43a2-9de9-36db8e2a0871"), "Vira-Lata", "Luna", 22000D));
         this.animalService.create(new Lizard(UUID.fromString("ceea70d3-ea1d-42f8-a5c9-bc4df5f12a62"), "Lila", 120D));
-        this.animalService.create(cat);
+
         logger.info("Animais persistidos no banco de dados teste.");
 
         var list = this.animalService.findAll();

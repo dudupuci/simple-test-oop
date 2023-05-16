@@ -3,10 +3,12 @@ package br.com.zoo.entities;
 import br.com.zoo.base.Animal;
 import br.com.zoo.interfaces.DomesticAnimal;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.UUID;
 
 @Entity
+@DiscriminatorValue("Cat")
 public final class Cat extends Animal implements DomesticAnimal {
 
     // Inheritance for difference.

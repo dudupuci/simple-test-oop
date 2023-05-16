@@ -2,10 +2,12 @@ package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.UUID;
 
 @Entity
+@DiscriminatorValue("Lizard")
 public final class Lizard extends Animal {
 
     // Heranca para Implementacao

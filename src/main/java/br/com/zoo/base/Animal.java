@@ -3,9 +3,11 @@ package br.com.zoo.base;
 import javax.persistence.*;
 import java.util.UUID;
 
-//@MappedSuperclass não irá persistir a tabela Animal, só irá servir de Superclasse para suas subclasses
+//@MappedSuperclass
 // e criar uma Single Table para cada filho
 @Entity // Irá persistir a tabela animal e podemos visualizar todos os animais em uma unica tabela.
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "animal_type")
 public abstract class Animal {
 
     @Id
