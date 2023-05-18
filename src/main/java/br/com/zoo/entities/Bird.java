@@ -1,6 +1,7 @@
 package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
+import br.com.zoo.entities.dto.BirdDto;
 import br.com.zoo.interfaces.DomesticAnimal;
 
 import javax.persistence.DiscriminatorValue;
@@ -22,6 +23,10 @@ public final class Bird extends Animal implements DomesticAnimal {
     public Bird(UUID id, String name, Double weight, String beakColor) {
         super(id, name, weight);
         this.beakColor = beakColor;
+    }
+
+    public BirdDto toDto() {
+        return new BirdDto(id, name, weight, beakColor);
     }
 
     public String getBeakColor() {

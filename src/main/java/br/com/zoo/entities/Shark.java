@@ -1,6 +1,7 @@
 package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
+import br.com.zoo.entities.dto.SharkDto;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -16,6 +17,10 @@ public final class Shark extends Animal {
     public Map<String, Integer> animalsEaten = new HashMap<>();
 
     public Shark() {
+    }
+
+    public SharkDto toDto() {
+        return new SharkDto(id, name, weight, animalsEaten);
     }
 
     public Shark(UUID id, String name, Double weight) {

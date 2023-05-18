@@ -1,6 +1,7 @@
 package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
+import br.com.zoo.entities.dto.LizardDto;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -19,6 +20,9 @@ public final class Lizard extends Animal {
         super(id, name, weight);
     }
 
+    public LizardDto toDto() {
+        return new LizardDto(id, name, weight);
+    }
 
     @Override
     protected void eat() {

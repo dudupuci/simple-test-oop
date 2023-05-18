@@ -1,5 +1,7 @@
 package br.com.zoo.base;
 
+import br.com.zoo.entities.dto.AnimalDto;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -7,7 +9,7 @@ import java.util.UUID;
 // e criar uma Single Table para cada filho
 @Entity // Irá persistir a tabela animal e podemos visualizar todos os animais em uma unica tabela.
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "animal_type")
+@DiscriminatorColumn(name = "type")
 public abstract class Animal {
 
     @Id
@@ -16,6 +18,10 @@ public abstract class Animal {
     protected Double weight;
 
     public Animal() {
+    }
+
+    public AnimalDto toDto() {
+        return new AnimalDto(id, name, weight);
     }
 
     public Animal(UUID id, String name, Double weight) {

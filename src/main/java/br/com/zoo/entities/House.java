@@ -10,8 +10,7 @@ public final class House {
 
     private Set<DomesticAnimal> domesticAnimalSet = new HashSet<>();
 
-    public House(Set<DomesticAnimal> domesticAnimalSet) {
-        this.domesticAnimalSet = domesticAnimalSet;
+    public House() {
     }
 
     public Set<DomesticAnimal> getDomesticAnimalSet() {
@@ -39,4 +38,6 @@ public final class House {
                 "domesticAnimalSet=" + domesticAnimalSet +
                 '}';
     }
+
+
 }

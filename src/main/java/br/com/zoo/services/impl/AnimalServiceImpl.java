@@ -1,6 +1,11 @@
 package br.com.zoo.services.impl;
 
 import br.com.zoo.base.Animal;
+import br.com.zoo.entities.Cat;
+import br.com.zoo.entities.Dog;
+import br.com.zoo.entities.dto.AnimalDto;
+import br.com.zoo.entities.dto.CatDto;
+import br.com.zoo.entities.dto.DogDto;
 import br.com.zoo.repositories.AnimalRepository;
 import br.com.zoo.services.AnimalService;
 import org.springframework.beans.BeanUtils;
@@ -31,11 +36,26 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public void update(UUID id, Animal animal) {
-        var oldAnimal = repository.findById(id).get();
-        updateDataAnimal(oldAnimal, animal);
-        this.repository.save(animal);
+    public void update(UUID id, AnimalDto newAnimalDto) {
+        Animal oldAnimal = repository.findById(id).orElseThrow(() -> new RuntimeException("err"));
+
+        oldAnimal.setId(newAnimalDto.getId());
+        oldAnimal.setName(newAnimalDto.getName());
+        oldAnimal.setWeight(newAnimalDto.getWeight());
+
+        if (oldAnimal instanceof Dog) {
+            DogDto dogDto = (DogDto) newAnimalDto;
+            Dog dog = (Dog) oldAnimal;
+            dog.setToys(dogDto.getToys());
+        } else if (oldAnimal instanceof Cat) {
+            CatDto catDto = (CatDto) newAnimalDto;
+            Cat cat = (Cat) oldAnimal;
+            cat.setOwnersName(catDto.getOwnersName());
+            cat.setVaccinated(catDto.getVaccinated());
+        }
+        repository.save(oldAnimal);
     }
+
 
     @Override
     public void deleteById(UUID id) {
@@ -47,9 +67,14 @@ public class AnimalServiceImpl implements AnimalService {
         return this.repository.findAll();
     }
 
-    public void updateDataAnimal(Animal oldAnimal, Animal newAnimal) {
-        oldAnimal.setId(newAnimal.getId());
-        oldAnimal.setName(newAnimal.getName());
-        oldAnimal.setWeight(newAnimal.getWeight());
+    @Override
+    public List<Animal> findAllByName(String name) {
+        return this.repository.findAllByName(name);
+    }
+
+    public void updateDataAnimal(AnimalDto oldAnimal, AnimalDto newAnimalDto) {
+        oldAnimal.setId(newAnimalDto.getId());
+        oldAnimal.setName(newAnimalDto.getName());
+        oldAnimal.setWeight(newAnimalDto.getWeight());
     }
 }

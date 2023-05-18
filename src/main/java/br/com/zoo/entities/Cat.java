@@ -1,6 +1,7 @@
 package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
+import br.com.zoo.entities.dto.CatDto;
 import br.com.zoo.interfaces.DomesticAnimal;
 
 import javax.persistence.DiscriminatorValue;
@@ -16,6 +17,10 @@ public final class Cat extends Animal implements DomesticAnimal {
     private Boolean isVaccinated;
 
     public Cat() {
+    }
+
+    public CatDto toDto() {
+        return new CatDto(id, name, weight, ownersName, isVaccinated);
     }
 
     public Cat(UUID id, final String name, Double weight, String ownersName) {

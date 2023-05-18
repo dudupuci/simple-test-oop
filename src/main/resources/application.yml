@@ -1,2 +1,12 @@
 server:
   port: 8095
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # Ajuda a resolver problemas com URL's
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true

@@ -39,9 +39,6 @@ public class Zoological {
         zoological.deleteAnimal(lizard, animalsList);
         zoological.listAnimals(animalsList);
 
-        // house = new House(domesticAnimalSet);
-
-        // First option to filter DomesticAnimals from a generic AnimalsList
         var domestics = animalsList
                 .stream()
                 .filter(animal -> animal instanceof DomesticAnimal)
@@ -49,16 +46,9 @@ public class Zoological {
         for (Object domestic : domestics) {
             domesticAnimalSet.add((DomesticAnimal) domestic);
         }
-
-        // Second option to filter DomesticAnimals from a generic AnimalsList
-        /// var newSet = zoological.filterOnlyDomesticAnimals(animalsList);
-        // System.out.println(newSet);
-
-        System.out.println("House of Domestic Animals!");
         for (Object domesticAnimal : domestics) {
             System.out.println(domesticAnimal);
         }
-
     }
 
     public Set<DomesticAnimal> filterOnlyDomesticAnimals(List<? super Animal> animalsList) {
@@ -70,7 +60,6 @@ public class Zoological {
         }
         return domesticAnimalSet;
     }
-
 
     public void listAnimals(List<? super Animal> animalsList) {
         int i = 0;

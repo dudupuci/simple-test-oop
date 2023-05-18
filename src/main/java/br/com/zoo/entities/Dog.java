@@ -20,11 +20,11 @@ public final class Dog extends Animal implements DomesticAnimal {
     @Transient
     private Set<String> toys = new HashSet<>();
 
-    public DogDto toDto() {
-        return new DogDto(id, name, weight, dogBread, toys);
+    public Dog() {
     }
 
-    public Dog() {
+    public DogDto toDto() {
+        return new DogDto(id, name, weight, dogBread, toys);
     }
 
     public Dog(UUID id, final String dogBread, final String name, Double weight) {
@@ -41,7 +41,6 @@ public final class Dog extends Animal implements DomesticAnimal {
     public String getDogBread() {
         return dogBread;
     }
-
 
     public Set<String> getToys() {
         return toys;
