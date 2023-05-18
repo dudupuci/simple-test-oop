@@ -9,6 +9,7 @@ public class BirdDto extends AnimalDto {
 
     private String beakColor;
 
+    public BirdDto(){}
     public BirdDto(UUID id, String name, Double weight, String beakColor) {
         super(id, name, weight);
         this.beakColor = beakColor;

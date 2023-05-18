@@ -9,6 +9,7 @@ public class SharkDto extends AnimalDto {
 
     public Map<String, Integer> animalsEaten = new HashMap<>();
 
+    public SharkDto(){}
     public SharkDto(UUID id, String name, Double weight, Map<String, Integer> animalsEaten) {
         super(id, name, weight);
         this.animalsEaten = animalsEaten;

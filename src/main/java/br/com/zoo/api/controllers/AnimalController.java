@@ -47,4 +47,10 @@ public class AnimalController implements AnimalAPI {
         animalService.update(UUID.fromString(id), newAnimal);
         return ResponseEntity.ok("Animal updated successfully");
     }
+
+    @Override
+    public ResponseEntity<?> create(AnimalDto animalDto) {
+        animalService.create(animalDto);
+        return ResponseEntity.status(201).body("Created");
+    }
 }

@@ -1,15 +1,15 @@
 package br.com.zoo.entities.dto;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
-
 import java.util.UUID;
 
 
-@JsonTypeName("Catzin")
+
 public class CatDto extends AnimalDto {
 
     private String ownersName;
     private Boolean isVaccinated;
+
+    public CatDto(){}
 
     public CatDto(UUID id, String name, Double weight, String ownersName, Boolean isVaccinated) {
         super(id, name, weight);

@@ -8,15 +8,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface AnimalService {
-    String create(Animal animal);
-
+    String create(AnimalDto animal);
     Optional<Animal> findById(UUID id);
-
     void update(UUID id, AnimalDto animal);
-
     void deleteById(UUID id);
-
     List<Animal> findAll();
-
     List<Animal> findAllByName(String name);
+    void clear();
 }

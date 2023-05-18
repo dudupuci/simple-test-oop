@@ -1,10 +1,7 @@
 package br.com.zoo.api;
 
-import br.com.zoo.base.Animal;
 import br.com.zoo.entities.dto.AnimalDto;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,5 +26,9 @@ public interface AnimalAPI {
     @PutMapping
     @RequestMapping(value = "update/{id}")
     ResponseEntity<?> update(@PathVariable("id") String id, @RequestBody AnimalDto animal);
+
+    @PostMapping
+    @RequestMapping(value = "/create")
+    ResponseEntity<?> create(@RequestBody AnimalDto animalDto);
 
 }

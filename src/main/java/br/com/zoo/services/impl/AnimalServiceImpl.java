@@ -1,11 +1,8 @@
 package br.com.zoo.services.impl;
 
 import br.com.zoo.base.Animal;
-import br.com.zoo.entities.Cat;
-import br.com.zoo.entities.Dog;
-import br.com.zoo.entities.dto.AnimalDto;
-import br.com.zoo.entities.dto.CatDto;
-import br.com.zoo.entities.dto.DogDto;
+import br.com.zoo.entities.*;
+import br.com.zoo.entities.dto.*;
 import br.com.zoo.repositories.AnimalRepository;
 import br.com.zoo.services.AnimalService;
 import org.springframework.beans.BeanUtils;
@@ -25,9 +22,35 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public String create(Animal animal) {
-        var obj = this.repository.save(animal);
-        return obj.getId().toString();
+    public String create(AnimalDto animalDto) {
+        Animal animal = null;
+        if (animalDto instanceof DogDto) {
+            DogDto dogDto = (DogDto) animalDto;
+            Dog dog = new Dog();
+            animal = dog;
+        } else if (animalDto instanceof CatDto) {
+            CatDto catDto = (CatDto) animalDto;
+            Cat cat = new Cat();
+            animal = cat;
+        } else if (animalDto instanceof BirdDto) {
+            BirdDto birdDto = (BirdDto) animalDto;
+            Bird bird = new Bird();
+            animal = bird;
+        } else if (animalDto instanceof LizardDto) {
+            LizardDto lizardDto = (LizardDto) animalDto;
+            Lizard lizard = new Lizard();
+            animal = lizard;
+        } else if (animalDto instanceof SharkDto) {
+            SharkDto sharkDto = (SharkDto) animalDto;
+            Shark shark = new Shark();
+            animal = shark;
+
+            if (animal != null) {
+                var obj = this.repository.save(animal);
+                return obj.getId().toString();
+            }
+        }
+        return null;
     }
 
     @Override
@@ -70,6 +93,11 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public List<Animal> findAllByName(String name) {
         return this.repository.findAllByName(name);
+    }
+
+    @Override
+    public void clear() {
+        this.repository.deleteAll();
     }
 
     public void updateDataAnimal(AnimalDto oldAnimal, AnimalDto newAnimalDto) {

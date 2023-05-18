@@ -1,7 +1,5 @@
 package br.com.zoo.entities.dto;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
-
 import java.util.Set;
 import java.util.UUID;
 
@@ -11,8 +9,7 @@ public class DogDto extends AnimalDto {
 
     private Set<String> toys;
 
-    public DogDto() {
-    }
+    public DogDto() {}
 
     public DogDto(UUID id, String name, Double weight, String dogBread, Set<String> toys) {
         super(id, name, weight);

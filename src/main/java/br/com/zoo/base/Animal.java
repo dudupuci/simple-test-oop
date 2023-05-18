@@ -5,15 +5,14 @@ import br.com.zoo.entities.dto.AnimalDto;
 import javax.persistence.*;
 import java.util.UUID;
 
-//@MappedSuperclass
-// e criar uma Single Table para cada filho
+//@MappedSuperclass e criar uma Single Table para cada filho
 @Entity // Irá persistir a tabela animal e podemos visualizar todos os animais em uma unica tabela.
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type")
 public abstract class Animal {
 
     @Id
-    protected UUID id;
+    protected UUID id = UUID.randomUUID();
     protected String name;
     protected Double weight;
 
