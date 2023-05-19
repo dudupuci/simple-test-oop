@@ -7,9 +7,7 @@ import br.com.zoo.interfaces.DomesticAnimal;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @DiscriminatorValue("Dog")

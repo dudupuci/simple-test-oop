@@ -15,7 +15,7 @@ import java.util.UUID;
         @JsonSubTypes.Type(value = SharkDto.class, name = "Shark")
 })
 public class AnimalDto {
-    protected UUID id;
+    protected UUID id = UUID.randomUUID();
     protected String name;
     protected Double weight;
 

@@ -31,4 +31,8 @@ public interface AnimalAPI {
     @RequestMapping(value = "/create")
     ResponseEntity<?> create(@RequestBody AnimalDto animalDto);
 
+    @GetMapping
+    @RequestMapping(value = "/search-equals")
+    ResponseEntity<List<?>> findAllByName(@RequestParam("name") String name);
+
 }

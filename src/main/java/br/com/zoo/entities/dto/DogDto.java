@@ -1,15 +1,17 @@
 package br.com.zoo.entities.dto;
 
-import java.util.Set;
-import java.util.UUID;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.*;
 
 
 public class DogDto extends AnimalDto {
     private String dogBread;
+    @JsonProperty("toys")
+    private Set<String> toys = new HashSet<>();
 
-    private Set<String> toys;
-
-    public DogDto() {}
+    public DogDto() {
+    }
 
     public DogDto(UUID id, String name, Double weight, String dogBread, Set<String> toys) {
         super(id, name, weight);
@@ -19,10 +21,6 @@ public class DogDto extends AnimalDto {
 
     public String getDogBread() {
         return dogBread;
-    }
-
-    public void setDogBread(String dogBread) {
-        this.dogBread = dogBread;
     }
 
     public Set<String> getToys() {

@@ -2,10 +2,13 @@ package br.com.zoo.entities;
 
 import br.com.zoo.base.Animal;
 import br.com.zoo.entities.dto.BirdDto;
+import br.com.zoo.enums.BeakColor;
 import br.com.zoo.interfaces.DomesticAnimal;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.UUID;
 
 @Entity
@@ -14,13 +17,13 @@ public final class Bird extends Animal implements DomesticAnimal {
 
     // Inheritance for difference.
 
-    private String beakColor;
-
+    @Enumerated(EnumType.STRING)
+    private BeakColor beakColor;
 
     public Bird() {
     }
 
-    public Bird(UUID id, String name, Double weight, String beakColor) {
+    public Bird(UUID id, String name, Double weight, BeakColor beakColor) {
         super(id, name, weight);
         this.beakColor = beakColor;
     }
@@ -29,7 +32,7 @@ public final class Bird extends Animal implements DomesticAnimal {
         return new BirdDto(id, name, weight, beakColor);
     }
 
-    public String getBeakColor() {
+    public BeakColor getBeakColor() {
         return beakColor;
     }
 

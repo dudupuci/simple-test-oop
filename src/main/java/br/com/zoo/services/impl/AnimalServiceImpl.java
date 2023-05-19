@@ -22,35 +22,9 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public String create(AnimalDto animalDto) {
-        Animal animal = null;
-        if (animalDto instanceof DogDto) {
-            DogDto dogDto = (DogDto) animalDto;
-            Dog dog = new Dog();
-            animal = dog;
-        } else if (animalDto instanceof CatDto) {
-            CatDto catDto = (CatDto) animalDto;
-            Cat cat = new Cat();
-            animal = cat;
-        } else if (animalDto instanceof BirdDto) {
-            BirdDto birdDto = (BirdDto) animalDto;
-            Bird bird = new Bird();
-            animal = bird;
-        } else if (animalDto instanceof LizardDto) {
-            LizardDto lizardDto = (LizardDto) animalDto;
-            Lizard lizard = new Lizard();
-            animal = lizard;
-        } else if (animalDto instanceof SharkDto) {
-            SharkDto sharkDto = (SharkDto) animalDto;
-            Shark shark = new Shark();
-            animal = shark;
-
-            if (animal != null) {
-                var obj = this.repository.save(animal);
-                return obj.getId().toString();
-            }
-        }
-        return null;
+    public void create(AnimalDto animalDto) {
+        Animal animal = convertTargetAnimal(animalDto);
+        this.repository.save(animal);
     }
 
     @Override
@@ -104,5 +78,46 @@ public class AnimalServiceImpl implements AnimalService {
         oldAnimal.setId(newAnimalDto.getId());
         oldAnimal.setName(newAnimalDto.getName());
         oldAnimal.setWeight(newAnimalDto.getWeight());
+    }
+
+    private Animal convertTargetAnimal(AnimalDto dto) {
+        if (dto instanceof DogDto) {
+            return new Dog(
+                    dto.getId(),
+                    ((DogDto) dto).getDogBread(),
+                    dto.getName(),
+                    dto.getWeight(),
+                    ((DogDto) dto).getToys()
+            );
+        } else if (dto instanceof CatDto) {
+            return new Cat(
+                    dto.getId(),
+                    dto.getName(),
+                    dto.getWeight(),
+                    ((CatDto) dto).getOwnersName(),
+                    ((CatDto) dto).getVaccinated()
+            );
+        } else if (dto instanceof BirdDto) {
+            return new Bird(
+                    dto.getId(),
+                    dto.getName(),
+                    dto.getWeight(),
+                    ((BirdDto) dto).getBeakColor()
+            );
+        } else if (dto instanceof LizardDto) {
+            return new Lizard(
+                    dto.getId(),
+                    dto.getName(),
+                    dto.getWeight()
+            );
+        } else if (dto instanceof SharkDto) {
+            return new Shark(
+                    dto.getId(),
+                    dto.getName(),
+                    dto.getWeight(),
+                    ((SharkDto) dto).getAnimalsEaten()
+            );
+        }
+        return null;
     }
 }

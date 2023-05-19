@@ -22,7 +22,7 @@ public class Zoological {
         Map<String, Integer> animalsEaten = new HashMap<>();
         Dog dog = new Dog(UUID.randomUUID(),"Golden Retriever", "Bolota", 250D, Set.of("Bolinha", "Corda"));
         Shark shark = new Shark(UUID.randomUUID(),"Sword Shark", 1400D, animalsEaten);
-        Bird bird = new Bird(UUID.randomUUID(),"Beija-flor", 140D, BeakColor.GREEN.toString());
+        Bird bird = new Bird(UUID.randomUUID(),"Beija-flor", 140D, BeakColor.GREEN);
         Lizard lizard = new Lizard(UUID.randomUUID(),"Iguana", 240D);
 
         animalsEaten.put("Peixe-palhaco", 3);

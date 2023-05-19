@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface AnimalService {
-    String create(AnimalDto animal);
+    void create(AnimalDto animal);
     Optional<Animal> findById(UUID id);
     void update(UUID id, AnimalDto animal);
     void deleteById(UUID id);

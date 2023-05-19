@@ -53,4 +53,9 @@ public class AnimalController implements AnimalAPI {
         animalService.create(animalDto);
         return ResponseEntity.status(201).body("Created");
     }
+
+    @Override
+    public ResponseEntity<List<?>> findAllByName(String name) {
+       return ResponseEntity.ok().body(animalService.findAllByName(name));
+    }
 }
